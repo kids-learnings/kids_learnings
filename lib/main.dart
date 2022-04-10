@@ -49,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  int _currentIndex = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -70,6 +71,37 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _currentIndex,
+        backgroundColor: Colors.orange,//Color(0xFF6200EE),
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.brown.withOpacity(.6),
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
+        onTap: (value) {
+          // Respond to item press.
+          setState(() => _currentIndex = value);
+        },
+        items: [
+          BottomNavigationBarItem(
+            label: 'Learn',
+            icon: Icon(Icons.airplay),
+          ),
+          BottomNavigationBarItem(
+            label: 'Test',
+            icon: Icon(Icons.check_circle),
+          ),
+          BottomNavigationBarItem(
+            label: 'Report',
+            icon: Icon(Icons.show_chart),
+          ),
+          BottomNavigationBarItem(
+            label: 'More',
+            icon: Icon(Icons.more_horiz),
+          ),
+        ]
+      ),
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
