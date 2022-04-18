@@ -44,7 +44,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         style: const TextStyle(
           fontSize: 30.0,
           fontFamily: 'KGRedHands',
-          color: Colors.orange,
+          color: Colors.orangeAccent,
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
