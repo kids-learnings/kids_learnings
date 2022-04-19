@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-
 import './alphabets/alphabets_a_screen.dart';
 
 class ToddlerFirstScreen extends StatefulWidget {
@@ -36,12 +34,12 @@ class _ToddlerFirstScreenState extends State<ToddlerFirstScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AlphabetsAScreen()),
+                        MaterialPageRoute(builder: (context) => const AlphabetsAScreen()),
                       );
                     },
-                    child: Text('Alphabets'),
+                    child: const Text('Alphabets'),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -54,9 +52,9 @@ class _ToddlerFirstScreenState extends State<ToddlerFirstScreen> {
                     onPressed: () {
                       // Respond to button press
                     },
-                    child: Text("Numbers"),
+                    child: const Text("Numbers"),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -69,9 +67,9 @@ class _ToddlerFirstScreenState extends State<ToddlerFirstScreen> {
                     onPressed: () {
                       // Respond to button press
                     },
-                    child: Text("Colors"),
+                    child: const Text("Colors"),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -89,62 +87,6 @@ class _ToddlerFirstScreenState extends State<ToddlerFirstScreen> {
                 ],
               )),
         ),
-    );
-  }
-
-  Widget _aForApple() {
-    return SizedBox(
-      child: DefaultTextStyle(
-        style: const TextStyle(
-          fontSize: 30.0,
-          
-          color: Colors.orangeAccent,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Center(
-            child: AnimatedTextKit(
-              animatedTexts: [
-                WavyAnimatedText('Apple'),
-                WavyAnimatedText('Ant'),
-                WavyAnimatedText('Airplane'),
-                WavyAnimatedText('Alligator'),
-              ],
-              isRepeatingAnimation: false,
-              onTap: () {
-                print("Tap Event");
-              },
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _textLiquidFill() {
-    return SizedBox(
-      child: DefaultTextStyle(
-        style: const TextStyle(
-          fontSize: 30.0,
-          
-          color: Colors.orangeAccent,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Center(
-            child: TextLiquidFill(
-              text: 'A a',
-              waveDuration: Duration(seconds: 5),
-              waveColor: Colors.orangeAccent,
-              boxBackgroundColor: Colors.white,
-              textStyle: TextStyle(
-                fontSize: 175.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

@@ -19,8 +19,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.orange,
           fontFamily: 'KGRedHands',
         ),
-        home:
-            HomePageScreen() //const MyHomePage(title: 'Welcome to Kids Learnings'),
+        home: const HomePageScreen() //const MyHomePage(title: 'Welcome to Kids Learnings'),
         );
   }
 }

@@ -80,8 +80,7 @@ class _FirstPageScreenState extends State<FirstPageScreen> with SingleTickerProv
         ),
       ],
       title: const Text('Kids Learnings', style: TextStyle(
-        fontSize: 20.0,
-        
+        fontSize: 24.0,
         color: Colors.orangeAccent,
       )),
     );
@@ -104,7 +103,7 @@ class _FirstPageScreenState extends State<FirstPageScreen> with SingleTickerProv
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ToddlerFirstScreen()),
+                MaterialPageRoute(builder: (context) => const ToddlerFirstScreen()),
               );
             },
             child: const Text('Toddler'),
@@ -122,7 +121,7 @@ class _FirstPageScreenState extends State<FirstPageScreen> with SingleTickerProv
             onPressed: () {
               // Respond to button press
             },
-            child: Text("Child"),
+            child: const Text("Child"),
           ),
         ],
       ),
@@ -151,11 +150,10 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _menuTitles = [
-    'Declarative style',
-    'Premade widgets',
-    'Stateful hot reload',
-    'Native performance',
-    'Great community',
+    'Alphabets',
+    'Numbers',
+    'Shapes',
+    'Colors',
   ];
 
   static const _initialDelayTime = Duration(milliseconds: 50);
@@ -163,25 +161,17 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _staggerTime = Duration(milliseconds: 50);
   static const _buttonDelayTime = Duration(milliseconds: 150);
   static const _buttonTime = Duration(milliseconds: 500);
-  final _animationDuration = _initialDelayTime +
-      (_staggerTime * _menuTitles.length) +
-      _buttonDelayTime +
-      _buttonTime;
+  final _animationDuration = _initialDelayTime + (_staggerTime * _menuTitles.length) + _buttonDelayTime + _buttonTime;
 
   late AnimationController _staggeredController;
   final List<Interval> _itemSlideIntervals = [];
-  late Interval _buttonInterval;
 
   @override
   void initState() {
     super.initState();
 
     _createAnimationIntervals();
-
-    _staggeredController = AnimationController(
-      vsync: this,
-      duration: _animationDuration,
-    )..forward();
+    _staggeredController = AnimationController(vsync: this, duration: _animationDuration,)..forward();
   }
 
   void _createAnimationIntervals() {
@@ -195,14 +185,6 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
         ),
       );
     }
-
-    final buttonStartTime =
-        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
-    final buttonEndTime = buttonStartTime + _buttonTime;
-    _buttonInterval = Interval(
-      buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
-      buttonEndTime.inMilliseconds / _animationDuration.inMilliseconds,
-    );
   }
 
   @override
@@ -244,8 +226,6 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       children: [
         const SizedBox(height: 16),
         ..._buildListItems(),
-        const Spacer(),
-        _buildGetStartedButton(),
       ],
     );
   }
@@ -276,56 +256,12 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(color: Colors.brown, fontSize: 19, fontWeight: FontWeight.w100,),
             ),
           ),
         ),
       );
     }
     return listItems;
-  }
-
-  Widget _buildGetStartedButton() {
-    return SizedBox(
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: AnimatedBuilder(
-          animation: _staggeredController,
-          builder: (context, child) {
-            final animationPercent = Curves.elasticOut.transform(
-                _buttonInterval.transform(_staggeredController.value));
-            final opacity = animationPercent.clamp(0.0, 1.0);
-            final scale = (animationPercent * 0.5) + 0.5;
-
-            return Opacity(
-              opacity: opacity,
-              child: Transform.scale(
-                scale: scale,
-                child: child,
-              ),
-            );
-          },
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: const StadiumBorder(),
-              primary: Colors.blue,
-              padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 14),
-            ),
-            onPressed: () {},
-            child: const Text(
-              'Get started',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
   }
 }

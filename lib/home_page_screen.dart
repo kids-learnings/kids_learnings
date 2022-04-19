@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import './first_page_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
+  const HomePageScreen({Key? key}) : super(key: key);
+
   @override
   _HomePageScreenState createState() => _HomePageScreenState();
 }
@@ -12,10 +14,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffFFFFFF),
+        backgroundColor: const Color(0xffFFFFFF),
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Text('Kids Learnings'),
+          title: const Text('Kids Learnings'),
           automaticallyImplyLeading: false,
           centerTitle: true,
         ),
