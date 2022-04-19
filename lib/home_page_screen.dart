@@ -43,7 +43,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+          
           color: Colors.orangeAccent,
         ),
         child: Padding(
@@ -58,6 +58,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   textStyle: const TextStyle(
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'KGRedHands',
                   ),
                   speed: const Duration(milliseconds: 200),
                 ),
@@ -65,7 +66,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               onFinished: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FirstPageScreen()),
+                  MaterialPageRoute(builder: (context) => const FirstPageScreen()),
                 );
               },
             ),

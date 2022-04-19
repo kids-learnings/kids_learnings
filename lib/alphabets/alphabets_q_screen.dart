@@ -14,13 +14,13 @@ class AlphabetsQScreen extends StatefulWidget {
 enum TtsState { playing, stopped, paused, continued }
 
 class _AlphabetsQScreenState extends State<AlphabetsQScreen> {
-  String get word_1 => "Panda";
+  String get word_1 => "Queen";
 
-  String get word_2 => "Pen";
+  String get word_2 => "Quail";
 
-  String get word_3 => "Potato";
+  String get word_3 => "Question";
 
-  String get word_4 => "Pineapple";
+  String get word_4 => "Quiet";
 
   String get letterWord => "Q q";
 
@@ -181,7 +181,7 @@ class _AlphabetsQScreenState extends State<AlphabetsQScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+
           color: Colors.deepOrange,
         ),
         child: Padding(
@@ -212,7 +212,7 @@ class _AlphabetsQScreenState extends State<AlphabetsQScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+
           color: Colors.blue,
         ),
         child: Padding(
@@ -243,7 +243,7 @@ class _AlphabetsQScreenState extends State<AlphabetsQScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+
           color: Colors.pinkAccent,
         ),
         child: Padding(
@@ -274,7 +274,7 @@ class _AlphabetsQScreenState extends State<AlphabetsQScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+
           color: Colors.brown,
         ),
         child: Padding(
@@ -305,7 +305,7 @@ class _AlphabetsQScreenState extends State<AlphabetsQScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+
           color: Colors.orangeAccent,
         ),
         child: Padding(

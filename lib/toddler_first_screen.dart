@@ -97,7 +97,7 @@ class _ToddlerFirstScreenState extends State<ToddlerFirstScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+          
           color: Colors.orangeAccent,
         ),
         child: Padding(
@@ -126,7 +126,7 @@ class _ToddlerFirstScreenState extends State<ToddlerFirstScreen> {
       child: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 30.0,
-          fontFamily: 'KGRedHands',
+          
           color: Colors.orangeAccent,
         ),
         child: Padding(

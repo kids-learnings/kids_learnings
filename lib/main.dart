@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           // This is the theme of application.
           primarySwatch: Colors.orange,
+          fontFamily: 'KGRedHands',
         ),
         home:
             HomePageScreen() //const MyHomePage(title: 'Welcome to Kids Learnings'),

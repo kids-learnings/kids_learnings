@@ -81,7 +81,7 @@ class _AlphabetsUScreenState extends State<AlphabetsUScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const AlphabetsUScreen()),
+                        MaterialPageRoute(builder: (context) => const AlphabetsTScreen()),
                       );
                     },
                   ),
